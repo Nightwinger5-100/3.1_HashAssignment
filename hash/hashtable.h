@@ -1,22 +1,21 @@
-#pragma once
-#include <iostream>
-#include <list>
-#include <cstring>
+#pragma
+#include<list>
+#include<string>
 
 using namespace std;
+
 class HashTable
 {
-
-	static const int hashGroups = 10;
-	list<pair<int, string>> table[hashGroups];
+    int numkeys;
+    list<string>* hashT;
 
 public:
-	bool isEmpty() const;
-	int hashFunction(int key);
-	void insertData(int key, string values);
-	int hashKey(int data);
-	void displayHashTable();
-	bool findValue(int data);
-	bool deleteData(int data);
-
+    HashTable(int numkeys);
+    void insertData(const string& data);
+    int hashKey(const string& data);
+    void displayHashTable();
+    unsigned int getHashedText(const string& data);
+    bool findValue(const string& data);
+    bool deleteData(const string& data);
+    
 };
